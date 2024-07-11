@@ -13,13 +13,13 @@ export const actions = {
   
     deploy: async ({ request }) => {
       const data = await request.formData();
-//       await signer.login('sales@timechainlabs.io', 'string')
-//       await Root.loadArtifact()
-//       const square = BigInt(data.get('square'))
-//       instance = new Root(square)
+      await signer.login('sales@timechainlabs.io', 'string')
+      await Root.loadArtifact()
+      const square = BigInt(data.get('square'))
+      instance = new Root(square)
       
-//       await instance.connect(signer)
-// const deployTx = await instance.deploy(data.get('amount'))
+      await instance.connect(signer)
+const deployTx = await instance.deploy(data.get('amount'))
       
       const deployTx = {id:'asdf'}
       console.log(
@@ -31,12 +31,12 @@ export const actions = {
       const data = await request.formData();
 
     const root = data.get('root')
-//     // await new Promise((f) => setTimeout(f, 5000))
-    // const { tx: callTx } = await instance.methods.unlock(root)
-    // console.log(
-    //     'contract unlocked successfully : https://whatsonchain.com/tx/' +
-    //         callTx.id
-    // )      
+    // await new Promise((f) => setTimeout(f, 5000))
+    const { tx: callTx } = await instance.methods.unlock(root)
+    console.log(
+        'contract unlocked successfully : https://whatsonchain.com/tx/' +
+            callTx.id
+    )      
     const tx = 'fadf' 
     return { success: true, tx };
 	},
